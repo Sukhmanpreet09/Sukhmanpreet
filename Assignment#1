@@ -1,0 +1,66 @@
+#Welcome screen
+
+print("Welcome!  ", "Arnold's Amazing Eats")
+
+def details():
+    firstname=input("enter your first name: ")#write costumer's first name
+    lastname=input("enter your last name: ")#write costumer's last name
+    address=input("enter your full address: ")#write costumer's full addresss
+    city=input("enter your city: ")#write the city of the costumer
+    province=input("enter your province: ")#enter the costumer's province
+    code=input("enter your postal code: ")#enter the postal code of the costumer
+    instructions=input("enter your instructions: ")#enter any special instruction for the food
+    phone=(input("enter your phone number:"))#enter the phone number
+
+    print("meal type1=pizza $9.99   " # price of the two meals available at the restaurant
+      "meal type2=burger $7.99")
+     
+
+
+
+    choose=(input("enter which type of meal you wants (type1 or type2): "))#enter "type1" for pizza and "type2" for burger
+    quantity=int(input("enter the quantity of the meal you chooses: "))#enter the quantity of the meal
+    confirmation=input("enter thr confirmation for your order (Y/N): ")#enter the confirmation for your order
+    if confirmation=="Y":
+        if choose=="type1":
+            print("your order is accepted", 9.99*quantity )
+
+        elif choose=="type2":
+            print("your order is accepted", 7.99*quantity)
+            
+        elif confirmation=="N":
+            details()
+    a=9.99*quantity
+    a=7.99*quantity
+    #enter the discount on the meal
+    if a<100:
+        x=a*0.95
+        Grandtotal=x
+        print (Grandtotal)#discount on type1/type2 meal under $100
+
+    elif a>100 and a<500:
+        s=a*0.90
+        Grandtotal= s
+        print (Grandtotal)#discount on type/type2 meal between $100 and $500
+    
+    elif a>500:
+        f=a*0.85
+        Grandtotal=f
+        print (Grandtotal)#discount on type1/type2 meal under $500
+    
+
+    #receipt of the order of the customer
+    print("Name:" ,firstname, lastname)
+    print("Address: ", address)
+    print("City,province and postal code:",city,",",province,",",code)
+    print("Delivery Instruction:",instructions)
+
+    
+    print("                                                                                 ")
+    print("order          ","item Quantity","    item price                ","Total")
+    print("-------        ","-------------      ","------        ","         -------")
+    print(choose,"              " ,quantity,"           " ,"$",a ,"             ","$",Grandtotal  )
+    print("                                     ","Tax(13%)","          ","$", (Grandtotal*0.13) )
+    print("                                                    ----------------")
+    print("                                     ", "Total","            ","$",(Grandtotal+(Grandtotal*0.13)))         
+details()
